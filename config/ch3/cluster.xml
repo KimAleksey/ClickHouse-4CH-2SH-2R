@@ -5,20 +5,28 @@
                 <replica>
                     <host>clickhouse-01</host>
                     <port>9000</port>
+                    <user>default</user>
+                    <password>default</password>
                 </replica>
                 <replica>
                     <host>clickhouse-02</host>
                     <port>9000</port>
+                    <user>default</user>
+                    <password>default</password>
                 </replica>
             </shard>
             <shard>
                 <replica>
                     <host>clickhouse-03</host>
                     <port>9000</port>
+                    <user>default</user>
+                    <password>default</password>
                 </replica>
                 <replica>
                     <host>clickhouse-04</host>
                     <port>9000</port>
+                    <user>default</user>
+                    <password>default</password>
                 </replica>
             </shard>
         </analytics_cluster>
@@ -38,4 +46,9 @@
             <port>2181</port>
         </node>
     </zookeeper>
+
+    <macros>
+        <shard>02</shard>
+        <replica>01</replica>
+    </macros>
 </clickhouse>

@@ -39,8 +39,9 @@ services:
 
   # SHARD 1
   clickhouse-01:
-    image: clickhouse/clickhouse-server:25.10
+    image: clickhouse/clickhouse-server:25.12
     container_name: clickhouse-01
+    hostname: clickhouse-01
     ports:
       - "8123:8123"
       - "9000:9000"
@@ -48,7 +49,6 @@ services:
       - clickhouse_01_data:/var/lib/clickhouse
       - ./config/ch1/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
       - ./config/ch1/users.xml:/etc/clickhouse-server/users.d/docker.xml
-      - ./config/ch1/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:
@@ -56,8 +56,9 @@ services:
         hard: 262144
 
   clickhouse-02:
-    image: clickhouse/clickhouse-server:25.10
+    image: clickhouse/clickhouse-server:25.12
     container_name: clickhouse-02
+    hostname: clickhouse-02
     ports:
       - "8124:8123"
       - "9001:9000"
@@ -65,7 +66,6 @@ services:
       - clickhouse_02_data:/var/lib/clickhouse
       - ./config/ch2/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
       - ./config/ch2/users.xml:/etc/clickhouse-server/users.d/docker.xml
-      - ./config/ch2/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:
@@ -74,8 +74,9 @@ services:
 
   # SHARD 2
   clickhouse-03:
-    image: clickhouse/clickhouse-server:25.10
+    image: clickhouse/clickhouse-server:25.12
     container_name: clickhouse-03
+    hostname: clickhouse-03
     ports:
       - "8125:8123"
       - "9002:9000"
@@ -83,7 +84,6 @@ services:
       - clickhouse_03_data:/var/lib/clickhouse
       - ./config/ch3/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
       - ./config/ch3/users.xml:/etc/clickhouse-server/users.d/docker.xml
-      - ./config/ch3/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:
@@ -91,8 +91,9 @@ services:
         hard: 262144
 
   clickhouse-04:
-    image: clickhouse/clickhouse-server:25.10
+    image: clickhouse/clickhouse-server:25.12
     container_name: clickhouse-04
+    hostname: clickhouse-04
     ports:
       - "8126:8123"
       - "9003:9000"
@@ -100,7 +101,6 @@ services:
       - clickhouse_04_data:/var/lib/clickhouse
       - ./config/ch4/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
       - ./config/ch4/users.xml:/etc/clickhouse-server/users.d/docker.xml
-      - ./config/ch4/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:
