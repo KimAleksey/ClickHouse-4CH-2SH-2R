@@ -46,8 +46,9 @@ services:
       - "9000:9000"
     volumes:
       - clickhouse_01_data:/var/lib/clickhouse
-      - ./config/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
-      - ./config/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch1/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
+      - ./config/ch1/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch1/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:
@@ -62,8 +63,9 @@ services:
       - "9001:9000"
     volumes:
       - clickhouse_02_data:/var/lib/clickhouse
-      - ./config/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
-      - ./config/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch2/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
+      - ./config/ch2/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch2/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:
@@ -79,8 +81,9 @@ services:
       - "9002:9000"
     volumes:
       - clickhouse_03_data:/var/lib/clickhouse
-      - ./config/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
-      - ./config/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch3/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
+      - ./config/ch3/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch3/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:
@@ -95,8 +98,9 @@ services:
       - "9003:9000"
     volumes:
       - clickhouse_04_data:/var/lib/clickhouse
-      - ./config/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
-      - ./config/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch4/cluster.xml:/etc/clickhouse-server/config.d/cluster.xml
+      - ./config/ch4/users.xml:/etc/clickhouse-server/users.d/docker.xml
+      - ./config/ch4/macros.xml:/etc/clickhouse-server/config.d/macros.xml
     depends_on: [zookeeper1, zookeeper2, zookeeper3]
     ulimits:
       nofile:

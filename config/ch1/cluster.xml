@@ -13,11 +13,11 @@
             </shard>
             <shard>
                 <replica>
-                    <host>clickhouse-04</host>
+                    <host>clickhouse-03</host>
                     <port>9000</port>
                 </replica>
                 <replica>
-                    <host>clickhouse-05</host>
+                    <host>clickhouse-04</host>
                     <port>9000</port>
                 </replica>
             </shard>
