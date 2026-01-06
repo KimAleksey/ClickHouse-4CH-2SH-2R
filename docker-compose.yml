@@ -12,6 +12,7 @@ services:
       ZOO_SERVERS: server.1=zookeeper1:2888:3888;2181 server.2=zookeeper2:2888:3888;2181 server.3=zookeeper3:2888:3888;2181
     volumes:
       - zookeeper1_data:/data
+    restart: always
 
   # 3 Zookeeper ноды
   zookeeper2:
@@ -24,6 +25,7 @@ services:
       ZOO_SERVERS: server.1=zookeeper1:2888:3888;2181 server.2=zookeeper2:2888:3888;2181 server.3=zookeeper3:2888:3888;2181
     volumes:
       - zookeeper2_data:/data
+    restart: always
 
   # 3 Zookeeper ноды
   zookeeper3:
@@ -36,6 +38,7 @@ services:
       ZOO_SERVERS: server.1=zookeeper1:2888:3888;2181 server.2=zookeeper2:2888:3888;2181 server.3=zookeeper3:2888:3888;2181
     volumes:
       - zookeeper3_data:/data
+    restart: always
 
   # SHARD 1
   clickhouse-01:
@@ -54,6 +57,7 @@ services:
       nofile:
         soft: 262144
         hard: 262144
+    restart: always
 
   clickhouse-02:
     image: clickhouse/clickhouse-server:25.12
@@ -71,6 +75,7 @@ services:
       nofile:
         soft: 262144
         hard: 262144
+    restart: always
 
   # SHARD 2
   clickhouse-03:
@@ -89,6 +94,7 @@ services:
       nofile:
         soft: 262144
         hard: 262144
+    restart: always
 
   clickhouse-04:
     image: clickhouse/clickhouse-server:25.12
@@ -106,6 +112,7 @@ services:
       nofile:
         soft: 262144
         hard: 262144
+    restart: always
 
 volumes:
   zookeeper1_data:

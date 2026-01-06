@@ -14,6 +14,7 @@
                     <user>default</user>
                     <password>default</password>
                 </replica>
+                <internal_replication>1</internal_replication>
             </shard>
             <shard>
                 <replica>
@@ -28,6 +29,7 @@
                     <user>default</user>
                     <password>default</password>
                 </replica>
+                <internal_replication>1</internal_replication>
             </shard>
         </analytics_cluster>
     </remote_servers>
